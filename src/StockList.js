@@ -12,7 +12,7 @@ class StockList extends Component {
       var HTMLarray = []
       for (let i = 0; i < array.length; i++) {
         HTMLarray.push(
-          <div>
+          <div key={StockArray[i].ticker}>
             <li><StocklistItem stock={StockArray[i]} /></li>
           </div>
         )

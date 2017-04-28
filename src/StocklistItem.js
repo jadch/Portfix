@@ -5,7 +5,9 @@ class StocklistItem extends Component {
     const Stock = this.props.stock
     return (
       <div>
-        <p>{Stock.ticker}</p>
+        <p>{Stock.name} ({Stock.ticker})</p>
+        <p>{Stock.quantity}</p>
+        <p>{Stock.last_available_price}</p>
       </div>
     )
   }

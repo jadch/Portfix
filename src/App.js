@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import OverviewPage from './OverviewPage.js'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello world!</h1>
+        <OverviewPage />
       </div>
     );
   }

@@ -5,3 +5,26 @@ body {
   font-weight: 400;
 }
 
+
+/* Styling of the Overview Page*/
+
+.StockList {
+  list-style: none;
+}
+
+.StocklistItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.StocklistItem p {
+  align-items: center;
+  text-align: center;
+  min-width: 75px;
+  margin: 0px 10px 0px 10px;
+}
+
+.StocklistItem p:first-of-type {
+  width: 175px;
+}

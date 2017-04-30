@@ -5,9 +5,16 @@ body {
   font-weight: 400;
 }
 
+/* General Styles */
+.PositiveChange {
+  color: green;
+}
+
+.NegativeChange {
+  color: red;
+}
 
 /* Styling of the Overview Page*/
-
 .StockList {
   list-style: none;
 }

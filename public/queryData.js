@@ -1,7 +1,7 @@
 // historicalData current architecture: An object with stock tickers as keys => associated with a list of lists. Each
 // list contains in the following order: date, adjusted_close, adjusted_volume
 
-const historicalData = {
+const queryData = {
    "AAPL":[
       [
          "2016-01-04",
@@ -6692,4 +6692,4 @@ const historicalData = {
    ]
 }
 
-module.exports = historicalData
+module.exports = queryData

@@ -25,12 +25,12 @@ const initialState = {
          "name":"Amazon"
       },
       {
-         "ticker":"BNP",
+         "ticker":"JPM",
          "quantity":200,
          "entry_price":70.20,
          "last_available_price":65.68,
-         "currency":"EUR",
-         "name":"BNP Paribas"
+         "currency":"USD",
+         "name":"JPMorgan Chase"
       }
    ]
 }

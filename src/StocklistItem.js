@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class StocklistItem extends Component {
   render() {
@@ -7,7 +8,7 @@ class StocklistItem extends Component {
 
     return (
       <div className='StocklistItem'>
-        <p><a href='/StockDetailPage'>{Stock.name} ({Stock.ticker})</a></p>
+        <p><Link to='/StockDetailPage'>{Stock.name} ({Stock.ticker})</Link></p>
         <p>{Stock.quantity}</p>
         <p>{Stock.entry_price}</p>
         <p>{Stock.last_available_price}</p>

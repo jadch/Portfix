@@ -1,5 +1,10 @@
-// historicalData current architecture: An object with stock tickers as keys => associated with a list of lists. Each
+// queryData current architecture: An object with stock tickers as keys => associated with a list of lists. Each
 // list contains in the following order: date, adjusted_close, adjusted_volume
+
+// So far in the application, queryData represents the JSON file obtained from a third-party API (right now,
+// using www.quandl.com ). historicalData is a JSON file with the application data, it is obtained by taking the query
+// results (queryData) and formatting it to our application's need. Our application will mainly access and work using
+// historicalData, not queryData. queryData is only used to populate historicalData in a more convenient format.
 
 const queryData = {
    "AAPL":[

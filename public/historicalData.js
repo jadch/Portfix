@@ -1,3 +1,6 @@
+// historicalData current architecture: An object with stock tickers as keys => associated with a list of lists. Each
+// list contains in the following order: date, adjusted_close, adjusted_volume
+
 const historicalData = {
    "AAPL":[
       [

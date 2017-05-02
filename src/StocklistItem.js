@@ -8,7 +8,7 @@ class StocklistItem extends Component {
 
     return (
       <div className='StocklistItem'>
-        <p><Link to='/StockDetailPage'>{Stock.name} ({Stock.ticker})</Link></p>
+        <p><Link to={'/StockDetailPage/' + Stock.ticker}>{Stock.name} ({Stock.ticker})</Link></p>
         <p>{Stock.quantity}</p>
         <p>{Stock.entry_price}</p>
         <p>{Stock.last_available_price}</p>

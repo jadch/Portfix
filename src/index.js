@@ -8,7 +8,7 @@ ReactDOM.render(
   <Router>
     <div>
       <Route exact path='/' component={App} />
-      <Route path='/StockDetailPage' component={StockDetailPage} />
+      <Route path='/StockDetailPage/:ticker' component={StockDetailPage} />
     </div>
   </Router>,
   document.getElementById('root')

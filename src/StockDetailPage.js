@@ -2,15 +2,17 @@ import React, { Component } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import ArraysToObjects from './helper_functions/ArraysToObjects.js'
 import queryData from '../public/queryData.js'
+import initialState from '../public/initialState.js'
 
 class StockDetailPage extends Component {
   render () {
     const ticker = this.props.match.params.ticker
+    const stockInfo = initialState.Stock_info[ticker]
     const data = ArraysToObjects(queryData[ticker])
     return (
       <div>
         <div>
-          <h2>{ticker}</h2>
+          <h2>{stockInfo.name + ' (' + ticker + ')' }</h2>
         </div>
         <div>
           <AreaChart width={700} height={300} data={data}>

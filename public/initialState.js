@@ -32,7 +32,25 @@ const initialState = {
          "currency":"USD",
          "name":"JPMorgan Chase"
       }
-   ]
+   ],
+   "Stock_info":{
+      "AAPL":{
+         "name":"Apple",
+         "currency":"USD"
+      },
+      "NFLX":{
+         "name":"Netflix",
+         "currency":"USD"
+      },
+      "AMZN":{
+         "name":"Amazon",
+         "currency":"USD"
+      },
+      "JPM":{
+         "name":"JPMorgan Chase",
+         "currency":"USD"
+      }
+   }
 }
 
 module.exports = initialState

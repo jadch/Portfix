@@ -42,6 +42,9 @@ class StockDetailPage extends Component {
             <Area type='monotone' dataKey='adjusted_close' stroke='#8884d8' fillOpacity={1} fill='url(#adjustedClose)' />
           </AreaChart>
         </div>
+        <div className='StockDetailPage-Description'>
+          <p>{stockInfo.bloom_desc}</p>
+        </div>
       </div>
     )
   }

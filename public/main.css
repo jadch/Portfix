@@ -47,3 +47,11 @@ body {
   margin: 5px 10px 25px 30px;
   opacity: 0.4;
 }
+
+.StockDetailPage-Description p {
+  width: 700px;
+  margin: 10px 10px 10px 30px;
+  text-align: justify;
+  font-style: italic;
+  font-size: 1.05em;
+}

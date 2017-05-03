@@ -9,7 +9,7 @@ const ArraysToObjects = (ArrayofArrays) => {
   var return_array = [] //Array to be returned
 
   ArrayofArrays.map( (array) => {
-    let temporary_obj = {}
+    var temporary_obj = {}
     temporary_obj['date'] = array[0]
     temporary_obj['adjusted_close'] = array[1]
     temporary_obj['adjusted_volume'] = array[2]
@@ -19,4 +19,4 @@ const ArraysToObjects = (ArrayofArrays) => {
   return return_array
 }
 
-export default ArraysToObjects
+module.exports = ArraysToObjects

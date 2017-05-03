@@ -39,7 +39,7 @@ class StockDetailPage extends Component {
             <YAxis />
             <CartesianGrid strokeDasharray="3 3" />
             <Tooltip />
-            <Area type='monotone' dataKey='adjusted_close' stroke='#8884d8' fillOpacity={1} fill='url(#adjustedClose)' />
+            <Area type='monotone' dataKey='adjusted_close' name='Adj. Close' stroke='#8884d8' fillOpacity={1} fill='url(#adjustedClose)' />
           </AreaChart>
         </div>
         <div className='StockDetailPage-Description'>

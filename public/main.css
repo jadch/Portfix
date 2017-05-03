@@ -14,6 +14,7 @@ body {
   color: red;
 }
 
+
 /* Styling of the Overview Page*/
 .StockList {
   list-style: none;
@@ -34,4 +35,15 @@ body {
 
 .StocklistItem p:first-of-type {
   width: 175px;
+}
+
+
+/* Styling of the StockDetail Page*/
+.StockDetailPage-Header h2 {
+  margin: 30px 10px 10px 30px;
+}
+
+.StockDetailPage-Header h3 {
+  margin: 5px 10px 25px 30px;
+  opacity: 0.4;
 }

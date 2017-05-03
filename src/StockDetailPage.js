@@ -23,8 +23,9 @@ class StockDetailPage extends Component {
     }
     return (
       <div>
-        <div>
+        <div className='StockDetailPage-Header'>
           <h2>{stockInfo.name + ' (' + ticker + ')' }</h2>
+          <h3>{stockInfo.exchange}</h3>
         </div>
         <div>
           <AreaChart width={700} height={300} data={data}>

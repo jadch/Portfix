@@ -12,7 +12,7 @@ class StockDetailPage extends Component {
     const stockInfo = initialState.Stock_info[ticker]
     const data = ArraysToObjects(queryData[ticker])
 
-    // tickFormat format the ticks on the XAxis. If january => indicate month + year
+    // tickFormat formats the ticks on the XAxis. If january => indicate month + year
     const tickFormat = (tick) => {
       if( tick.slice(5,7) == '01') {
         return dateFormat(tick, 'mmm yy')

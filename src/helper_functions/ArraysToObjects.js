@@ -11,7 +11,7 @@ const ArraysToObjects = (ArrayofArrays) => {
   ArrayofArrays.map( (array) => {
     var temporary_obj = {}
     temporary_obj['date'] = array[0]
-    temporary_obj['adjusted_close'] = array[1]
+    temporary_obj['adjusted_close'] = +array[1].toFixed(2)
     temporary_obj['adjusted_volume'] = array[2]
 
     return_array.push(temporary_obj)

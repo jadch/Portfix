@@ -18,9 +18,18 @@ body {
 /* Styling of the Overview Page*/
 .StockList {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 25px 25px 100px;
+}
+
+.StocklistItem:hover {
+  box-shadow: inset 0 0 9px 11px #e0dbdd;
+  width: 600px;
 }
 
 .StocklistItem a {
+  width: 600px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -38,22 +47,23 @@ body {
 
 .StocklistItem p:first-of-type {
   width: 175px;
+
 }
 
 
 /* Styling of the StockDetail Page*/
 .StockDetailPage-Header h2 {
-  margin: 30px 10px 10px 50px;
+  margin: 30px 10px 10px 100px;
 }
 
 .StockDetailPage-Header h3 {
-  margin: 5px 10px 25px 50px;
+  margin: 5px 10px 25px 100px;
   opacity: 0.4;
 }
 
 .StockDetailPage-Description p {
   width: 725px;
-  margin: 10px 10px 10px 50px;
+  margin: 10px 10px 10px 100px;
   text-align: justify;
   font-style: italic;
   font-size: 1.05em;

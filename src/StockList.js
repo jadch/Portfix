@@ -21,7 +21,9 @@ class StockList extends Component {
     }
     return (
       <ul className='StockList'>
-        {HTMLify(StockArray)}
+        <div>
+          {HTMLify(StockArray)}
+        </div>
       </ul>
     )
   }

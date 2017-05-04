@@ -27,7 +27,7 @@ class StockDetailPage extends Component {
           <h2>{stockInfo.name + ' (' + ticker + ')' }</h2>
           <h3>{stockInfo.exchange}</h3>
         </div>
-        <div>
+        <div className='StockDetailPage-PriceChart'>
           <AreaChart width={700} height={300} data={data}>
             <defs>
               <linearGradient id="adjustedClose" x1="0" y1="0" x2="0" y2="1">

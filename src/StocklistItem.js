@@ -8,11 +8,13 @@ class StocklistItem extends Component {
 
     return (
       <div className='StocklistItem'>
-        <p><Link to={'/StockDetailPage/' + Stock.ticker}>{Stock.name} ({Stock.ticker})</Link></p>
-        <p>{Stock.quantity}</p>
-        <p>{Stock.entry_price}</p>
-        <p>{Stock.last_available_price}</p>
-        <p className={percentage_change > 0 ? 'PositiveChange' : 'NegativeChange'}>{percentage_change > 0 ? '+' + percentage_change + '%' : percentage_change + '%'}</p>
+        <Link to={'/StockDetailPage/' + Stock.ticker}>
+          <p>{Stock.name} ({Stock.ticker})</p>
+          <p>{Stock.quantity}</p>
+          <p>{Stock.entry_price}</p>
+          <p>{Stock.last_available_price}</p>
+          <p className={percentage_change > 0 ? 'PositiveChange' : 'NegativeChange'}>{percentage_change > 0 ? '+' + percentage_change + '%' : percentage_change + '%'}</p>
+        </Link>
       </div>
     )
   }

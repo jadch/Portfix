@@ -20,7 +20,7 @@ body {
   list-style: none;
 }
 
-.StocklistItem {
+.StocklistItem a {
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -5,8 +5,8 @@ import initialState from '../public/initialState.js'
 import StocklistItem from './StocklistItem.js'
 
 class StockList extends Component {
-  render() {
-    //Take a simple array with a list of stock objects => transform it into JSX/HTML with HTMLify
+  render () {
+    // Take a simple array with a list of stock objects => transform it into JSX/HTML with HTMLify
     const StockArray = initialState.PF_stock_list
     const HTMLify = (array) => {
       var HTMLarray = []

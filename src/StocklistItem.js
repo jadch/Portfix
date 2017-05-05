@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 class StocklistItem extends Component {
-  render() {
+  render () {
     const Stock = this.props.stock
-    const percentage_change = (((Stock.last_available_price - Stock.entry_price) / Stock.entry_price) * 100).toFixed(2)
+    const percentageChange = (((Stock.last_available_price - Stock.entry_price) / Stock.entry_price) * 100).toFixed(2)
 
     return (
       <div className='StocklistItem'>
@@ -13,7 +13,7 @@ class StocklistItem extends Component {
           <p>{Stock.quantity}</p>
           <p>{Stock.entry_price}</p>
           <p>{Stock.last_available_price}</p>
-          <p className={percentage_change > 0 ? 'PositiveChange' : 'NegativeChange'}>{percentage_change > 0 ? '+' + percentage_change + '%' : percentage_change + '%'}</p>
+          <p className={percentageChange > 0 ? 'PositiveChange' : 'NegativeChange'}>{percentageChange > 0 ? '+' + percentageChange + '%' : percentageChange + '%'}</p>
         </Link>
       </div>
     )

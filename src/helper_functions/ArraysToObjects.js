@@ -6,17 +6,17 @@
 // an array of objects {date: xx, adjusted_close: xx, adjusted_volume: xx}
 
 const ArraysToObjects = (ArrayofArrays) => {
-  var return_array = [] //Array to be returned
+  var returnArray = [] // Array to be returned
 
-  ArrayofArrays.map( (array) => {
-    var temporary_obj = {}
-    temporary_obj['date'] = array[0]
-    temporary_obj['adjusted_close'] = +array[1].toFixed(2)
-    temporary_obj['adjusted_volume'] = array[2]
+  ArrayofArrays.map((array) => {
+    var temporaryObj = {}
+    temporaryObj['date'] = array[0]
+    temporaryObj['adjusted_close'] = +array[1].toFixed(2)
+    temporaryObj['adjusted_volume'] = array[2]
 
-    return_array.push(temporary_obj)
+    returnArray.push(temporaryObj)
   })
-  return return_array
+  return returnArray
 }
 
 module.exports = ArraysToObjects

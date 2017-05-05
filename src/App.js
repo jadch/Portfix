@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import OverviewPage from './OverviewPage.js'
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
+      <div className='App'>
         <OverviewPage />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

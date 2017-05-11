@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
-import ArraysToObjects from './helper_functions/ArraysToObjects.js'
+import array_of_arrays_to_array_of_objects from './helper_functions/array_of_arrays_to_array_of_objects.js'
 import queryData from '../public/queryData.js'
 import initialState from '../public/initialState.js'
 
@@ -10,7 +10,7 @@ class StockDetailPage extends Component {
   render () {
     const ticker = this.props.match.params.ticker
     const stockInfo = initialState.Stock_info[ticker]
-    const data = ArraysToObjects(queryData[ticker])
+    const data = array_of_arrays_to_array_of_objects(queryData[ticker])
 
     // tickFormat formats the ticks on the XAxis. If january => indicate month + year
     const tickFormat = (tick) => {

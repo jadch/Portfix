@@ -5,7 +5,7 @@
 // This function takes the query data (array of arrays) and returns it under the following format:
 // an array of objects {date: xx, adjusted_close: xx, adjusted_volume: xx}
 
-const ArraysToObjects = (ArrayofArrays) => {
+const array_of_arrays_to_array_of_objects = (ArrayofArrays) => {
   var returnArray = [] // Array to be returned
 
   ArrayofArrays.map((array) => {
@@ -19,4 +19,4 @@ const ArraysToObjects = (ArrayofArrays) => {
   return returnArray
 }
 
-module.exports = ArraysToObjects
+module.exports = array_of_arrays_to_array_of_objects

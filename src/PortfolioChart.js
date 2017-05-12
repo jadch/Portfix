@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import portfolioValuation from './helper_functions/portfolioValuation.js'
 import test_historicalPFdata from './test_scripts/test_historicalPFdata.js'
+import object_to_array from './helper_functions/object_to_array.js'
 
 class PortfolioChart extends Component {
   render () {
     var PF_valuation = portfolioValuation(test_historicalPFdata)
-    const data = [{date: '1', value:'4'}]
+    const data = object_to_array(PF_valuation)
     return (
       <div>
         <AreaChart width={700} height={300} data={data}>

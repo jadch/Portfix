@@ -44,7 +44,7 @@ const valuate = (data) => {
   return value
 }
 
-const test = portfolioValuation(historicalPFdata)
-console.log(test)
+// const test = portfolioValuation(historicalPFdata)
+// console.log(test)
 
 module.exports = portfolioValuation

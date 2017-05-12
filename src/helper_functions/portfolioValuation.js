@@ -1,31 +1,50 @@
-// This function will compute the valuation of a portfolio for a given time period using
-//      1) historical stock data and
-//      2) the list of stocks making up the portfolio
+// This function will compute the valuation of a portfolio for a given time period using as input:
+//      An object with an architecture like the one described in historicalPFdata.js
 //
-// The function will return an object: { date: 'value' }
-// The inputs of the function will probably change in the future once a proper database is used and a lasting
+// {
+//   'aaaa-mm-dd': {
+//     'stocks': {
+//       'ticker': {
+//         'quantity': xxx,
+//         'adjusted_close': xxx
+//       }
+//     },
+//     'cash': {
+//         'usd': xxx,
+//       }
+//   },
+// }
+//
+// The function will return an object: { date: 'value' }. A collection of the value of our portfolio for given dates.
+// The inputs of the function might still change in the future once a proper database is used and a lasting
 // data architecture is adopted.
+const historicalPFdata = require('../test_scripts/test_historicalPFdata.js')
 
-// Temporary code to get the input data until a database is implemented
-const queryData = require('../../public/queryData.js')
-const initialState = require('../../public/initialState.js')
-
-const ticker_array = initialState.PF_stock_list.map( (stock) => stock.ticker )
-const quantity_obj = {}
-const quantity_array = initialState.PF_stock_list.map( (stock) => quantity_obj[stock.ticker] = stock.quantity )
-const dates = queryData['AAPL'].map( (instance) => instance[0] )
-
-console.log(ticker_array)
-console.log(quantity_obj)
-console.log(dates) // Temporary code to have an array of days on which the stock market is open.
-
-const portfolioValuation = () => {
+const portfolioValuation = (historicalPFdata) => {
+  const PF_valutation = {}
+  const dates = Object.keys(historicalPFdata)
+  //Looping on all the dates, calculating the PF value at each date using the valuate function
   for (var i = 0; i < dates.length; i++) {
-    var daily_val = 0
-    ticker_array.map( (ticker) => {
-      daily_val = daily_val + quantity_obj[ticker] * queryData['??']
-    })
+    var date = dates[i]
+    var daily_data = historicalPFdata[date]
+    PF_valutation[date] = valuate(daily_data)
   }
+  return PF_valutation
 }
+
+const valuate = (data) => {
+  var value = 0
+  var cash = data.cash.usd
+  var stocks = Object.keys(data.stocks)
+  //Looping on all the stocks in the PF and including their value in the PF valuation
+  stocks.map( (stock) => {
+    value = value + data.stocks[stock].quantity * data.stocks[stock].adjusted_close
+  })
+  value = value + cash
+  return value
+}
+
+const test = portfolioValuation(historicalPFdata)
+console.log(test)
 
 module.exports = portfolioValuation

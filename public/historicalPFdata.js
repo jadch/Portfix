@@ -9,7 +9,9 @@
 //         'quantity': xxx,
 //       }
 //     },
-//     'cash': xxx
+//     'cash': {
+//         'usd': xxx,
+//       }
 //   },
 // }
 

@@ -7,6 +7,7 @@
 //     'stocks': {
 //       'ticker': {
 //         'quantity': xxx,
+//         'adjusted_close': xxx
 //       }
 //     },
 //     'cash': {
@@ -14,9 +15,10 @@
 //       }
 //   },
 // }
-
-// The reason the stock price is not included in the data is because the calculated adjusted close changes
-// in the event of a split, or dividends.
+//
+// Decided to include the adjusted_close of each stock, at least at first. In the future, might add a listener for when
+// a stock split happens and the ajdusted_close needs to be, well, adjusted. We might also run a script that updates
+// the adjusted_close daily or weekly, depending on the size of the db and other issues...
 
 const historicalPFdata = {
 

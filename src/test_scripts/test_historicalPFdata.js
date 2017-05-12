@@ -1,0 +1,1 @@
+{"2016-01-01":{"stocks":{"AAPL":{"quantity":100},"AMZN":{"quantity":200}},"cash":{"usd":5000}}}

@@ -1,14 +1,17 @@
-// This function will take in an object an output an array
+// This function will take in an object and output an array of objects
 // Input:   { 'date': portfolio_value, 'date': portfolio_value, ...  }
-// Output:  [ [date, portfolio_value], [date, portfolio_value], ...]
+// Output:  [ {'date': date, 'value': portfolio_value }, {'date': date, 'value': portfolio_value }, ...]
 
-// This makes it useful for creating charts (where the supported input is an array of arrays and not an object).
+// This makes it useful for creating charts (where the supported input is an array of objects and not an object).
 
 const object_to_array = (object) => {
   var array = []
   var keys = Object.keys(object)
   keys.map( (key) => {
-    array.push([key, object[key]])
+    array.push({
+      'date': key,
+      'value': object[key]
+    })
   })
   return array
 }

@@ -18,9 +18,12 @@ const constructor = (queryData, quantities) => {
   var PF_value = {}
   stocks.map( (stock) => {
     var stock_hist = queryData[stock]
+    // For each stock, loop through all of its history and add it to PF_value.
     for (var i = 0; i < stock_hist.length; i++) {
       var hist_instance = stock_hist[i]
       var date = hist_instance[0]
+      // If PF_value still has no key for a specific date, add it (as well as a key for 'stocks'). If a key exists,
+      // just add the quantity and ajdusted data under this key (for a gvien stock)
       if (PF_value[date] && PF_value[date]['stocks']) {
         PF_value[date]['stocks'][stock] = {
           'quantity': quantities[stock],
@@ -30,6 +33,9 @@ const constructor = (queryData, quantities) => {
       else {
         PF_value[date] = {}
         PF_value[date]['stocks'] = {}
+        PF_value[date]['cash'] = {
+          'usd': 5000
+        }
         PF_value[date]['stocks'][stock] = {
           'quantity': quantities[stock],
           'adjusted_close': hist_instance[1]
@@ -47,21 +53,3 @@ fs.writeFile('test_historicalPFdata.js', JSON.stringify(PF_data), 'utf8', (err) 
     console.log('test_historicalPFdata has been saved!')
   }
 })
-
-
-
-// const PF_data = {
-//   '2016-01-01': {
-//     'stocks': {
-//       'AAPL': {
-//         'quantity': 100
-//       },
-//       'AMZN': {
-//         'quantity': 200
-//       }
-//     },
-//     'cash': {
-//       'usd': 5000
-//     }
-//   }
-// }

@@ -10,13 +10,18 @@ class PortfolioChart extends Component {
     var PF_valuation = portfolioValuation(test_historicalPFdata)
     const data = object_to_array(PF_valuation)
 
-    // tickFormat formats the ticks on the XAxis. If january => indicate month + year
+    //tickFormat formats the ticks on the XAxis. If january => indicate month + year
     const tickFormat = (tick) => {
       if (tick.slice(5, 7) === '01') {
         return dateFormat(tick, 'mmm yy')
       } else {
         return dateFormat(tick, 'mmm')
       }
+    }
+
+    //TooltipFormat formats the value displayed in the Tooltip
+    const TooltipFormat = (value) => {
+      return value.toFixed(2) + '$'
     }
 
     return (
@@ -31,7 +36,7 @@ class PortfolioChart extends Component {
           <XAxis dataKey='date' interval={28} tickFormatter={tickFormat}/>
           <YAxis />
           <CartesianGrid strokeDasharray='3 3' />
-          <Tooltip />
+          <Tooltip formatter={TooltipFormat}/>
           <Area type='monotone' dataKey='value' name='Portfolio Value' stroke='#8884d8' fillOpacity={1} fill='url(#value)' />
         </AreaChart>
       </div>

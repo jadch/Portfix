@@ -20,6 +20,12 @@ class StockDetailPage extends Component {
         return dateFormat(tick, 'mmm')
       }
     }
+
+    //TooltipFormat formats the value displayed in the Tooltip
+    const TooltipFormat = (value) => {
+      return value.toFixed(2) + ' ' + stockInfo.currency
+    }
+
     return (
       <div>
         <div className='StockDetailPage-Header'>
@@ -37,7 +43,7 @@ class StockDetailPage extends Component {
             <XAxis dataKey='date' tickFormatter={tickFormat} interval={28} />
             <YAxis />
             <CartesianGrid strokeDasharray='3 3' />
-            <Tooltip />
+            <Tooltip formatter={TooltipFormat}/>
             <Area type='monotone' dataKey='adjusted_close' name='Adj. Close' stroke='#8884d8' fillOpacity={1} fill='url(#adjustedClose)' />
           </AreaChart>
         </div>
